@@ -1,0 +1,193 @@
+@charset "UTF-8";
+
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;700&display=swap');
+
+* {
+    margin: 0px;
+    padding: 0px;
+    font-family: "Noto Sans";
+    color: #072C33;
+}
+
+header {
+    margin: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-weight: bold;
+}
+
+header > div {
+    display: flex;
+    align-items: center;
+}
+
+header p {
+    padding-left: 15px;
+    font-size: 1.3em;
+    line-height: 1.7em;
+}
+
+header > div > p > strong {
+    background-color: #19A1BD;
+    color: white;
+    padding: 5px;
+    border-radius: 10px;
+    margin-left: 5px;
+}
+
+.img-header {
+    max-width: 70px;
+}
+
+.hamburgerMenu {
+    display: none;
+}
+
+nav > a {
+    text-decoration: none;
+    padding-left: 15px;
+}
+
+nav > a:hover {
+    text-decoration-color: #072C33;
+    text-decoration: underline;
+}
+
+nav > a > i:hover {
+    color: #19A1BD;
+}
+
+Main > .noticia {
+    align-items: center;
+    display: flex;
+}
+
+Main > .noticia > picture > img {
+    max-width: 700px;
+    width: 100%;
+    border-radius: 0px 10px 10px 0px;
+}
+
+Main > .noticia > div {
+    padding-left: 40px;
+    margin-right: 20px;
+}
+
+.titulo-main {
+    font-weight: bold;
+    font-size: 2.7em;
+    max-width: 500px;
+}
+
+.titulo-main-destaque {
+    background-color: #072C33;
+    color: white;
+    font-weight: bold;
+    padding: 3px 8px;
+    font-size: .8em;
+    border-radius: 15px;
+    margin-bottom: 10px;
+    display: inline-block;
+}
+
+.titulo-main-destaque > i {
+    color: white;
+}
+
+.autor-main {
+    padding-top: 15px;
+}
+
+.autor-main > i {
+    padding-left: 15px;
+}
+
+.main-tempo-leitura {
+    font-size: .8em
+}
+
+.conteudo {
+    margin: auto;
+    max-width: 700px;
+    padding: 20px;
+    font-size: 1.2em;
+    line-height: 2em;
+}
+
+.conteudo > h1 {
+    padding: 20px 0px;
+    font-size: 1.4em;
+}
+
+.conteudo > p {
+    text-align: justify;
+    padding-bottom: 20px;
+}
+
+.conteudo > ul {
+    list-style-position: inside;
+}
+
+.conteudo a {
+    text-decoration: none;
+    border-bottom: 3px solid #677375;
+}
+
+.conteudo img {
+    max-width: 700px;
+    width: 100%;
+}
+
+.conteudo a:hover {
+    border-bottom: 3px solid #007187;
+}
+
+Footer {
+    text-align: center;
+    box-shadow: 3px 3px 8px rgba(0, 0, 0, 0.295);
+    padding: 20px;
+}
+
+Footer > nav {
+    font-weight: bold;
+}
+
+Footer > p {
+    padding: 15px;
+    font-size: .8em;
+}
+
+@media screen and (max-width: 782px) {
+    
+    header > nav {
+        display: none;
+    }
+
+    .hamburgerMenu {
+        display: block;
+        font-size: 2.7em;
+        cursor: pointer;
+    }
+}
+
+@media screen and (max-width: 460px){
+
+    header > div {
+        align-self: center;
+    }
+    
+    header {
+        align-items: flex-start;
+        flex-direction: column-reverse;
+    }
+
+    .hamburgerMenu {
+        margin-bottom: 15px;
+    }
+}
+
+
+
+
+
