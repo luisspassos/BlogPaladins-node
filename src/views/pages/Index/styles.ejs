@@ -1,22 +1,68 @@
 <style>
     .slider {
+        width: 800px;
         overflow: hidden;
-        max-width: 800px;
+        border-radius: 15px;
         margin-left: 40px;
+        position: relative;
+        display: flex;
+        align-items: center;
+        height: 400px;
+    }
+
+    .slider > button:hover {
+        font-size: 4.5em;
+    }
+
+    .slider > button > i {
+        color: var(--BLUE-PRIMARY);
+        text-shadow: var(--SHADOW-PRIMARY);
+    }
+
+    .slider > button:nth-of-type(1) {
+        left: 0;
+        border-radius: 15px 0 0 15px;
+    }
+
+    .slider > button:nth-of-type(1):hover {
+        background: linear-gradient(to right, var(--SHADOW-SLIDER-HOVER), transparent);
+    }
+
+    .slider > button:nth-of-type(2) {
+        right: 0;
+        border-radius: 0 15px 15px 0;
+    }
+
+    .slider > button:nth-of-type(2):hover {
+        background: linear-gradient(to right, transparent, var(--SHADOW-SLIDER-HOVER));
+    }
+
+    .slider > button {
+        background: transparent;
+        position: absolute;
+        border: 0;
+        font-size: 3.9em;
+        height: 100%;
+        padding: 0 20px;
+        cursor: pointer;
+        transition: .2s;
     }
 
     .imgsSlider {
         display: flex;
+        height: 100%;
+        transform: translateX(0);
+        transition: .5s ease-in-out;
     }
 
     .imgsSlider > img {
         width: 100%;
-        height: 400px;
         object-fit: cover;
-        border-radius: 20px;
     }
 
     .imgsSlider > img:nth-of-type(1) {
         flex-shrink: 0;
     }
+
+    
 </style>
