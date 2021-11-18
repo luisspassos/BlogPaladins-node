@@ -3,8 +3,8 @@ const app = express();
 
 app.set("view engine", "ejs")
 app.set('views','./src/views');
-app.set('assets', './src/assets')
-app.use(express.static("assets"))
+
+app.use(express.static("./src/public"));
 
 app.get("/", (req, res)=> {
     res.render("index");
