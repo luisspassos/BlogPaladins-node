@@ -7,7 +7,7 @@ app.set('views','./src/views');
 app.use(express.static("./src/assets"));
 
 app.get("/", (req, res)=> {
-    res.render("index");
+    res.render("pages/index");
 })
 
 app.listen(3002);
