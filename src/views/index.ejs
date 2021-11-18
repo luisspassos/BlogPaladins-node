@@ -5,14 +5,14 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Como funciona os drops da Twitch</title>
-    <link rel="shortcut icon" href="../public/assets/favicon.ico" type="image/x-icon">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link rel="stylesheet" href="style.css">
+    <%- include('../assets/style.ejs') %>
+    <link rel="shortcut icon" href="<%= require('../assets/favicon.ico') %>" type="image/x-icon">
 </head>
 <body>
     <header>
         <div>
-            <img class="img-header" src="../public/assets/paladins icon.png" alt="">
+            <img class="img-header" src="../assets/paladins icon.png" alt="Logo">
             <p>PALADINS <strong>BLOG</strong></p>
         </div>
         <nav>
@@ -55,7 +55,7 @@
             <p>Para vincular, você precisa de uma conta Prime Gaming <strong>(Caso queira a skin fornecida pela Prime Gaming)</strong>. Em seguida, entre nesse site <a rel="external" target="_blank" href="https://gaming.amazon.com/loot/paladins">https://gaming<br/>.amazon.com/loot/paladins</a> e você irá se deparar com isto:</p>
             <img src="../public/assets/prime paladins.PNG" alt="Prime Paladins">
             <p>Clique na foto do personagem que está disponível, clique em resgatar e aparecerá uma opção para vincular as contas. Abra o site da Hirez Studios, coloque seu login e navegue até a Aba <strong>Linked Accounts no ícone da Twitch</strong>. Role a página para baixo e clique em <strong>Link Account</strong>, então vincule as contas.</p>
-            <img src="../public/assets/linked accouts.PNG" alt="Linked Accounts">
+            <img src="../assets/linked accouts.PNG" alt="Linked Accounts">
             <p>E, TamDan! Conta vinculada com <strong>sucesso</strong>!</p>
 
             <h1>&#x23F0; Quanto tempo para conseguir uma Skin</h1>
