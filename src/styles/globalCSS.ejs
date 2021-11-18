@@ -1,19 +1,26 @@
 <style>
-    @import url('https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;700&display=swap');
     
-    * {
-        margin: 0;
-        padding: 0;
-        box-sizing: border-box;
-        font-family: "Noto Sans", sans-serif;
-        color: #072C33;
-    }
+    @import url('https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;700&display=swap');
 
     :root {
         --BLUE-PRIMARY: #19a1bd;
         --BLUE-SECONDARY: #007187;
         --BLUE-TERTIARY: #072c33;
         --GRAY-PRIMARY: #677375;
+    }
+
+    body {
+        display: flex;
+        flex-direction: column;
+        min-height: 100vh;
+    }
+    
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: "Noto Sans", sans-serif;
+        color: var(--BLUE-TERTIARY);
     }
     
 </style>
