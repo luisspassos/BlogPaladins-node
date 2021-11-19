@@ -1,0 +1,32 @@
+<script>
+    const sliderBtns = document.querySelectorAll(".slider button");
+    const sliderImgs = document.querySelectorAll(".imgsSlider > li > img");
+    const slider = document.querySelector(".imgsSlider");
+
+    let sliderIndex = 0;
+
+    function carouselNext() {
+        sliderIndex++;
+        
+        if(sliderIndex > sliderImgs.length - 1) {
+            sliderIndex = 0;
+        }
+
+        slider.style.transform = `translateX(${-sliderIndex * 100}%)`
+    }
+
+    function carouselPrev() {
+        sliderIndex--;
+        
+        if(sliderIndex < 0) {
+            sliderIndex = 2;
+            slider.style.transform = `translateX(${sliderIndex * -100}%)`
+            return
+        }
+
+        slider.style.transform = `translateX(${sliderIndex * 100}%)`
+    }
+
+    sliderBtns[1].addEventListener("click", carouselNext)
+    sliderBtns[0].addEventListener("click", carouselPrev)
+</script>
