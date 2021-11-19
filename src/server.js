@@ -10,5 +10,9 @@ app.get("/", (req, res)=> {
     res.render("pages/index");
 })
 
+app.get("/news", (req, res)=> {
+    res.render("pages/post")
+})
+
 app.listen(8080);
 console.log("Running 🚀")

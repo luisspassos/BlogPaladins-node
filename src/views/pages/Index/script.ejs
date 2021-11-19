@@ -1,7 +1,11 @@
 <script>
+    
     const sliderBtns = document.querySelectorAll(".slider button");
     const sliderImgs = document.querySelectorAll(".imgsSlider > li > img");
     const slider = document.querySelector(".imgsSlider");
+    const featuredPosts = document.querySelectorAll(".imgsSlider > li");
+
+    //slider
 
     let sliderIndex = 0;
 
@@ -20,13 +24,21 @@
         
         if(sliderIndex < 0) {
             sliderIndex = 2;
-            slider.style.transform = `translateX(${sliderIndex * -100}%)`
+            slider.style.transform = `translateX(-200%)`
             return
         }
 
-        slider.style.transform = `translateX(${sliderIndex * 100}%)`
+        slider.style.transform = `translateX(${-sliderIndex * 100}%)`
     }
 
     sliderBtns[1].addEventListener("click", carouselNext)
     sliderBtns[0].addEventListener("click", carouselPrev)
+
+    // click on the slider
+
+    featuredPosts.forEach(post => {
+        post.addEventListener("click", ()=> {
+           location = "/news"
+        })
+    })
 </script>
