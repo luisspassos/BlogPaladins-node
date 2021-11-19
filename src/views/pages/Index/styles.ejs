@@ -1,13 +1,51 @@
 <style>
+
     .slider {
-        width: 800px;
         overflow: hidden;
+        max-width: 800px;
+        height: 400px;
         border-radius: 15px;
         margin-left: 40px;
         position: relative;
         display: flex;
         align-items: center;
+    }
+
+    .imgsSlider {
+        display: flex;
+        transform: translateX(0);
+        transition: .5s ease-in-out;
+    }
+
+    .imgsSlider > li {
+        width: 100%;
+        list-style: none;
+        flex-shrink: 0;
+        position: relative;
+    }
+
+    .imgsSlider > li > img {
+        width: 100%;
+        object-fit: cover;
         height: 400px;
+    }
+
+    .imgsSlider > li > h2 {
+        color: white;
+        text-shadow: var(--SHADOW-PRIMARY);
+        position: absolute;
+        top: 0;
+    }
+
+    .slider > button {
+        background: transparent;
+        position: absolute;
+        border: 0;
+        font-size: 3.9em;
+        height: 100%;
+        padding: 0 20px;
+        cursor: pointer;
+        transition: .2s;
     }
 
     .slider > button:hover {
@@ -37,34 +75,4 @@
         background: linear-gradient(to right, transparent, var(--SHADOW-SLIDER-HOVER));
     }
 
-    .slider > button {
-        background: transparent;
-        position: absolute;
-        border: 0;
-        font-size: 3.9em;
-        height: 100%;
-        padding: 0 20px;
-        cursor: pointer;
-        transition: .2s;
-    }
-
-    .imgsSlider {
-        display: flex;
-        height: 100%;
-        transform: translateX(0);
-        transition: .5s ease-in-out;
-    }
-
-    .imgsSlider > li {
-        list-style: none;
-    }
-
-    .imgsSlider > li > img {
-        width: 100%;
-        object-fit: cover;
-    }
-
-    .imgsSlider > li > img:nth-of-type(1) {
-        flex-shrink: 0;
-    }
 </style>
