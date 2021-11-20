@@ -39,6 +39,7 @@
         height: 400px;
         list-style: none;
         position: relative;
+        backface-visibility: hidden;
     }
 
     .imgsSlider > li:hover > img {
@@ -54,12 +55,13 @@
     }
 
     .imgsSlider > li > h2 {
-        color: white;
         text-shadow: var(--TEXT-SHADOW-PRIMARY);
         text-align: center;
         font-size: 2em;
-        align-self: center;
+        color: white;
         max-width: 600px;
+        margin: 0 20px;
+        align-self: center;
         position: absolute;
         bottom: 25px;
         pointer-events: none;
@@ -123,17 +125,18 @@
         cursor: pointer;
         overflow: hidden;
         position: relative;
+        backface-visibility: hidden;
     }
 
-    .postList > li > img {
+    .postList > li > figure {
+        background: url(https://pbs.twimg.com/media/Elq1og6XIAMg7vA.jpg) 75% 10%;
         width: 100%;
+        border-radius: 20px;
         height: 100%;
-        object-fit: cover;
-        object-position: 75% 10%;
-        transition: .3s;
+        transition: .2s;
     }
 
-    .postList > li:hover > img {
+    .postList > li:hover > figure {
         transform: scale(1.1);
     }
 
@@ -157,6 +160,18 @@
     .postInfo > p > *{
         color: white;
         text-shadow: var(--TEXT-SHADOW-PRIMARY);
+    }
+
+    @media (max-width: 700px) {
+
+        .emphasis {
+            flex-direction: column;
+        }
+
+        .slider {
+            margin: 0 -40px;
+            border-radius: 0;
+        }
     }
 
 </style>

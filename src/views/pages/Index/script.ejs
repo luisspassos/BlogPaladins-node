@@ -3,7 +3,8 @@
     const sliderBtns = document.querySelectorAll(".slider button");
     const sliderImgs = document.querySelectorAll(".imgsSlider > li > img");
     const slider = document.querySelector(".imgsSlider");
-    const featuredPosts = document.querySelectorAll(".imgsSlider > li");
+    const sliderPosts = document.querySelectorAll(".imgsSlider > li");
+    const posts = document.querySelectorAll(".postList > li");
 
     //slider
 
@@ -34,11 +35,18 @@
     sliderBtns[1].addEventListener("click", carouselNext)
     sliderBtns[0].addEventListener("click", carouselPrev)
 
-    // click on the slider
-
-    featuredPosts.forEach(post => {
+    sliderPosts.forEach(post => {
         post.addEventListener("click", ()=> {
            location = "/news"
         })
     })
+
+    // Posts
+
+    posts.forEach(post => {
+        post.addEventListener("click", ()=> {
+            location = "/news"
+        })
+    })
+    
 </script>
