@@ -115,15 +115,26 @@
     .postList > li {
         width: 310px;
         height: 380px;
-        border-radius: 20px;
-        padding: 20px;
         display: flex;
         flex-direction: column;
         justify-content: end;
         gap: 3px;
         box-shadow: var(--SHADOW-PRIMARY);
-        background: url(https://pbs.twimg.com/media/Elq1og6XIAMg7vA.jpg) 75% 10%;
         cursor: pointer;
+        border-radius: 20px;
+        overflow: hidden;
+    }
+
+    .postList > li > figure {
+        background: url(https://pbs.twimg.com/media/Elq1og6XIAMg7vA.jpg) 75% 10%;
+        width: 100%;
+        border-radius: 20px;
+        height: 100%;
+        transition: .2s;
+    }
+
+    .postList > li:hover > figure {
+        transform: scale(1.1);
     }
 
     .postList > li > h3 {
