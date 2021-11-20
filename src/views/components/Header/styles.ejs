@@ -14,7 +14,7 @@ header > div {
 }
 
 header > div > a {
-    text-decoration: none;
+    text-decoration-line: none;
     display: flex;
     align-items: center;
 }
@@ -41,17 +41,17 @@ header > div > a > p > strong {
     display: none;
 }
 
-nav > a {
-    text-decoration: none;
+header > nav > a {
+    text-decoration-line: none;
     padding-left: 15px;
 }
 
-nav > a:hover {
+header > nav > a:hover {
     text-decoration-color: var(--BLUE-TERTIARY);
-    text-decoration: underline;
+    text-decoration-line: underline;
 }
 
-nav > a > i:hover {
+header > nav > a > i:hover {
     color: var(--BLUE-PRIMARY);
 }
 
@@ -77,6 +77,12 @@ nav > a > i:hover {
 
     .hamburgerMenu {
         margin-bottom: 15px;
+    }
+}
+
+@media (max-width: 347px) {
+    header {
+        margin: 40px 25px;
     }
 }
 
