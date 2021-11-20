@@ -10,7 +10,7 @@
         gap: 25px;
     }
 
-    .emphasis > h1 {
+    .emphasis>h1 {
         font-size: 2.6em;
         max-width: 461px;
     }
@@ -58,7 +58,7 @@
     .imgsSlider>li>h2 {
         text-shadow: var(--TEXT-SHADOW-PRIMARY);
         text-align: center;
-        font-size: clamp(1.8em, );
+        font-size: 2em;
         color: white;
         max-width: 600px;
         margin: 0 20px;
@@ -169,8 +169,8 @@
             flex-direction: column;
         }
 
-        .emphasis> h1 {
-           text-align: center;
+        .emphasis>h1 {
+            text-align: center;
         }
 
         .slider {
@@ -179,4 +179,9 @@
         }
     }
 
+    @media (max-width: 325px) {
+        .imgsSlider > li > h2 {
+            font-size: 1.8em;
+        }
+    }
 </style>
