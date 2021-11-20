@@ -6,11 +6,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Como funciona os drops da Twitch</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <%- include('../../assets/style.ejs') %>
+    <%- include('../../../styles/globalCSS.ejs') %>
+    <%- include('styles.ejs') %>
     <link rel="shortcut icon" href="../../favicon.ico" type="image/x-icon">
 </head>
 <body>
-    <%- include('../components/Header/index.ejs') %>
+    <%- include('../../components/Header/index.ejs') %>
     <Main>
         <section class="noticia">
             <picture>
@@ -54,6 +55,7 @@
 
         </section>
     </Main>
+    <%- include('../../components/Footer/index.ejs') %>
     <script src="https://kit.fontawesome.com/bc7de74478.js" crossorigin="anonymous"></script>
 </body>
 </html>
