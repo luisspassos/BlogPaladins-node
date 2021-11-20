@@ -1,7 +1,7 @@
 <style>
 
     main {
-        margin: 0 40px;
+        margin: 0 40px 25px;
     }
 
     .emphasis {
@@ -105,13 +105,33 @@
 
     .postList {
         list-style: none;
+        padding-top: 25px;
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 25px;
     }
 
     .postList > li {
         width: 310px;
         height: 380px;
-        border-radius: 15px;
-        background: url(https://pbs.twimg.com/media/Elq1og6XIAMg7vA.jpg) top right;
+        border-radius: 20px;
+        padding: 20px;
+        display: flex;
+        flex-direction: column;
+        justify-content: end;
+        gap: 3px;
+        box-shadow: var(--SHADOW-PRIMARY);
+        background: url(https://pbs.twimg.com/media/Elq1og6XIAMg7vA.jpg) 75% 10%;
+        cursor: pointer;
+    }
+
+    .postList > li > h3 {
+        font-size: 1.6em;
+    }
+
+    .postList > li > p:nth-of-type(1) {
+        word-spacing: 2px;
     }
 
     .postList > li > *,
