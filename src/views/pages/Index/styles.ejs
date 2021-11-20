@@ -125,15 +125,15 @@
         position: relative;
     }
 
-    .postList > li > figure {
-        background: url(https://pbs.twimg.com/media/Elq1og6XIAMg7vA.jpg) 75% 10%;
+    .postList > li > img {
         width: 100%;
-        border-radius: 20px;
         height: 100%;
-        transition: .2s;
+        object-fit: cover;
+        object-position: 75% 10%;
+        transition: .3s;
     }
 
-    .postList > li:hover > figure {
+    .postList > li:hover > img {
         transform: scale(1.1);
     }
 
