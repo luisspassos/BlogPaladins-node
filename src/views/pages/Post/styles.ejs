@@ -33,7 +33,7 @@ main {
 }
 
 .titulo-main-destaque {
-    background-color: #072C33;
+    background-color: var(--BLUE-TERTIARY);
     color: white;
     font-weight: bold;
     padding: 3px 8px;
@@ -58,7 +58,7 @@ main {
 .autor-main > time {
     display: inline-flex;
     align-items: center;
-    gap: 4px;
+    gap: 8px;
 }
 
 .main-tempo-leitura {
@@ -89,7 +89,7 @@ main {
 
 .conteudo a {
     text-decoration: none;
-    border-bottom: 3px solid #677375;
+    border-bottom: 3px solid var(--GRAY-PRIMARY);
     color: var(--BLUE-TERTIARY);
     word-break: break-all;
 }
@@ -100,13 +100,18 @@ main {
 }
 
 .conteudo a:hover {
-    border-bottom: 3px solid #007187;
+    border-bottom: 3px solid var(--BLUE-SECONDARY);
 }
 
 @media (max-width: 900px) {
+
     .postTitle {
         position: absolute;
         color: white;
+    }
+
+    .postTitle > p:nth-child(2),
+    .postTitle > p:nth-child(3) {
         text-shadow: var(--TEXT-SHADOW-PRIMARY);
     }
 
