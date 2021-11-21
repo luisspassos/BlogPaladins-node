@@ -1,8 +1,12 @@
 <script>
     const hamburgerMenu = document.querySelector(".hamburgerMenu > i");
+    const menu = document.querySelector(".menu");
+    const menuNavigation = document.querySelector(".menu > nav");
 
     hamburgerMenu.addEventListener("click", ()=> {
         hamburgerMenu.style.transform = "rotate(-90deg)"
+        menu.style.display = "flex";
+        menuNavigation.style.transform = "translateX(0%)"
     })
 
 </script>
