@@ -1,10 +1,5 @@
 <style>
 
-#test {
-    display: inline-flex;
-    align-items: center;
-}
-
 Main > .noticia {
     align-items: center;
     display: flex;
@@ -46,11 +41,15 @@ Main > .noticia > div {
 .autor-main {
     padding-top: 15px;
     display: flex;
+    flex-wrap: wrap;
     align-items: center;
+    gap: 5px 15px;
 }
 
-.autor-main > i {
-    padding-left: 15px;
+.autor-main > time {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
 }
 
 .main-tempo-leitura {
