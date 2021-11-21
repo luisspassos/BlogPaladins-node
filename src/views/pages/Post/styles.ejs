@@ -1,18 +1,23 @@
 <style>
 
-Main > .noticia {
+.noticia {
     align-items: center;
     display: flex;
 }
 
-Main > .noticia  > img {
-    max-width: 700px;
-    height: 393px;
-    width: 100%;
-    border-radius: 0px 10px 10px 0px;
+.noticia  > figure {
+    max-width: 750px;
+    height: 393.75px;
 }
 
-Main > .noticia > div {
+.noticia > figure > img {
+    width: 100%;
+    height: 100%;
+    border-radius: 0px 10px 10px 0px;
+    object-fit: cover;
+}
+
+.postTitle {
     padding-left: 40px;
     margin-right: 20px;
 }
@@ -90,6 +95,27 @@ Main > .noticia > div {
 
 .conteudo a:hover {
     border-bottom: 3px solid #007187;
+}
+
+@media (max-width: 900px) {
+    .postTitle {
+        position: absolute;
+    }
+
+    .postTitle > *,
+    .postTitle > * > *,
+    .postTitle > * > * > * {
+        color: white;
+    }
+
+    .noticia  > figure {
+        width: 100%;
+        max-width: initial;
+    }
+
+    .noticia > figure > img {
+        border-radius: 0;
+    }
 }
 </style>
 
