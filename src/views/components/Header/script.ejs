@@ -2,7 +2,11 @@
     const hamburgerMenu = document.querySelector(".hamburgerMenu > i");
     const menu = document.querySelector(".menu");
     const menuNavigation = document.querySelector(".menu > nav");
-    const menuCloseBtn = document.querySelector(".menu > nav > figure")
+    const menuCloseBtn = document.querySelector(".menu > nav > figure");
+    const searchIcon = document.querySelectorAll(".searchIcon");
+    const search = document.querySelectorAll(".search");
+
+    // Menu
 
     function menuHandler(rotate, opacity, zIndex, translateX) {
         menuNavigation.style.transform = `translateX(${translateX})`
@@ -21,6 +25,14 @@
             menu.style.zIndex = -1;
         }, 500)
         menuHandler(0, 1, 2, "100%")
+    })
+
+    //
+
+    searchIcon.forEach((icon, i) => {
+        icon.addEventListener("click", () => {
+            search[i].style.display = "block"
+        })
     })
 
 </script>
