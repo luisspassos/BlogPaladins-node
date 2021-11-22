@@ -63,7 +63,7 @@ header > nav > a:hover {
     text-decoration-line: underline;
 }
 
-header > nav > i:hover {
+header > nav:nth-of-type(1) > i:hover {
     color: var(--BLUE-PRIMARY);
 }
 
@@ -127,9 +127,19 @@ header > nav > i:hover {
 .search {
     position: absolute;
     right: 0;
-    top: 35px;
     z-index: 3;
     display: none;
+}
+
+.search > img {
+    width: 16px;
+    cursor: pointer;
+    display: block;
+    margin-left: auto;
+}
+
+.search > img:hover {
+    transform: scale(1.1);
 }
 
 .search > input {

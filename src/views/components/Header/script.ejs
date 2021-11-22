@@ -3,8 +3,10 @@
     const menu = document.querySelector(".menu");
     const menuNavigation = document.querySelector(".menu > nav");
     const menuCloseBtn = document.querySelector(".menu > nav > figure");
-    const searchIcon = document.querySelectorAll(".searchIcon");
+    const openSearchBtn = document.querySelectorAll(".openSearchBtn");
     const search = document.querySelectorAll(".search");
+    const closeSearchBtn = document.querySelectorAll(".search > img");
+    const inputSearch = document.querySelector(".search > input");
 
     // Menu
 
@@ -27,11 +29,19 @@
         menuHandler(0, 1, 2, "100%")
     })
 
-    //
+    // Search
 
-    searchIcon.forEach((icon, i) => {
-        icon.addEventListener("click", () => {
+    openSearchBtn.forEach((btn, i) => {
+        btn.addEventListener("click", () => {
             search[i].style.display = "block"
+            inputSearch.focus()
+        })
+    })
+
+    closeSearchBtn.forEach((btn, i) => {
+        btn.addEventListener("click", () => {
+            search[i].style.display = "none";
+            inputSearch.value = "";
         })
     })
 

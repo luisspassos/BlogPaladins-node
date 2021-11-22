@@ -10,8 +10,9 @@
         <a href="/">INÍCIO</a>
         <a href="https://www.instagram.com/" target="_blank" rel="external" >INSTAGRAM</a>
         <a href="https://www.paladins.com/" target="_blank" rel="external" >PALADINS</a>
-        <i title="Busca" class="fas fa-search fa-lg searchIcon"></i>
+        <i title="Busca" class="fas fa-search fa-lg openSearchBtn"></i>
         <form class="search">
+            <img src="../../../close.svg" alt="Botão de fechar">
             <input placeholder="Procure..." type="search">
             <div class="searchInputLines">
                 <hr>
@@ -26,16 +27,29 @@
     </nav>
     <nav title="Menu" class="hamburgerMenu">
         <i class="fas fa-bars"></i>
+        <form class="search">
+            <img src="../../../close.svg" alt="Botão de fechar">
+            <input placeholder="Procure..." type="search">
+            <div class="searchInputLines">
+                <hr>
+                <hr>
+            </div>
+            <ul>
+                <li>O baú de Halloween está de volta na loja!</li>
+                <li>O baú de Halloween está de volta na loja!</li>
+                <li>O baú de Halloween está de volta na loja!</li>
+            </ul>
+        </form>
     </nav>
     <aside class="menu">
         <nav>
             <figure title="Fechar" >
                 <img src="../../../close.svg" alt="Botão de fechar">        
             </figure>
-            <p class="hoverMenu"><a href="/">INÍCIO</a></p>
-            <p class="hoverMenu"><a href="https://instagram.com/">INSTAGRAM</a></p>
-            <p class="hoverMenu"><a href="https://www.paladins.com/">PALADINS</a></p>
-            <p class="hoverMenu">PESQUISAR</p>
+            <p><a href="/">INÍCIO</a></p>
+            <p><a href="https://instagram.com/" target="_blank">INSTAGRAM</a></p>
+            <p><a href="https://www.paladins.com/" target="_blank">PALADINS</a></p>
+            <p class="openSearchBtn">PESQUISAR</p>
         </nav>
     </aside>
     <%- include("./script.ejs") %>
