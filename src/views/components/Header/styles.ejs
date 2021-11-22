@@ -50,10 +50,12 @@ header > nav {
     position: relative;
 }
 
-header > nav > a {
+header > nav > a,
+header > nav > i {
     text-decoration-line: none;
-    padding-left: 15px;
+    margin-left: 15px;
     color: var(--BLUE-TERTIARY);
+    cursor: pointer;
 }
 
 header > nav > a:hover {
@@ -61,7 +63,7 @@ header > nav > a:hover {
     text-decoration-line: underline;
 }
 
-header > nav > a > i:hover {
+header > nav > i:hover {
     color: var(--BLUE-PRIMARY);
 }
 
@@ -126,31 +128,58 @@ header > nav > a > i:hover {
     position: absolute;
     right: 0;
     top: 35px;
+    z-index: 3;
+    display: none;
 }
 
 .search > input {
-    width: 310px;
+    width: 300px;
     font-size: 1.4em;
     border: 0;
     outline: 0;
 }
 
-.search > hr {
+.searchInputLines {
+    display: flex;
+    flex-direction: row-reverse;
+    overflow: hidden;
+}
+
+.searchInputLines > hr {
     border: 0;
     width: 100%;
     height: 3px;
+    flex-shrink: 0;
 }
 
-.search > hr:nth-of-type(1) {
+.searchInputLines > hr:nth-of-type(1) {
     background: var(--GRAY-SECONDARY);
 }
 
-.search > hr:nth-of-type(2) {
+.searchInputLines > hr:nth-of-type(2) {
     background: var(--BLUE-PRIMARY);
+    transform: translateX(0);
+    transition: .3s;
 }
 
-.search> input::-webkit-search-cancel-button {
+.searchInputLines> input::-webkit-search-cancel-button {
     display: none;
+}
+
+.search > input:focus + div > hr:nth-of-type(2) {
+    transform: translateX(100%);
+}
+
+.search > ul {
+    background: var(--GRAY-TERTIARY);
+    color: white;
+    border-radius: 0 0 10px 10px;
+    padding: 13px;
+    display: flex;
+    flex-direction: column;
+    gap: 13px;
+    box-shadow: var(--SHADOW-PRIMARY);
+    list-style-type: none;
 }
 
 @media screen and (max-width: 782px) {
