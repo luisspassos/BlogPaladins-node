@@ -46,6 +46,10 @@ header > div > a > p > strong {
     transition: .5s;
 }
 
+header > nav {
+    position: relative;
+}
+
 header > nav > a {
     text-decoration-line: none;
     padding-left: 15px;
@@ -116,6 +120,39 @@ header > nav > a > i:hover {
 
 .menu > nav > figure:hover > img {
     transform: scale(1.1);
+}
+
+.search {
+    display: flex;
+    border-bottom: 3px solid var(--BLUE-PRIMARY);
+    position: absolute;
+    right: 0;
+    top: 35px;
+}
+
+.search > input:focus .search {
+    border-bottom: 3px solid var(--BLUE-TERTIARY);
+}
+
+.search > input {
+    font-size: 1.4em;
+    border: 0;
+    outline: 0;
+    padding: 0 5px;
+}
+
+.search> input::-webkit-search-cancel-button {
+    display: none;
+}
+
+.search > button {
+    background: var(--GRAY-SECONDARY);
+    border: 0;
+    width: 35px;
+    font-size: 1em;
+    cursor: pointer;
+    color: var(--BLUE-TERTIARY);
+    border-radius: 2px 2px 0 0;
 }
 
 @media screen and (max-width: 782px) {
