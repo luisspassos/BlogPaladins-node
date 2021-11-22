@@ -2,12 +2,25 @@
     const hamburgerMenu = document.querySelector(".hamburgerMenu > i");
     const menu = document.querySelector(".menu");
     const menuNavigation = document.querySelector(".menu > nav");
+    const menuCloseBtn = document.querySelector(".menu > nav > figure")
+
+    function menuHandler(rotate, opacity, zIndex, translateX) {
+        menuNavigation.style.transform = `translateX(${translateX})`
+        hamburgerMenu.style.transform = `rotate(${rotate})`
+        menu.style.zIndex = zIndex;
+        menu.style.opacity = opacity;
+    }
 
     hamburgerMenu.addEventListener("click", ()=> {
-        hamburgerMenu.style.transform = "rotate(-90deg)"
-        menu.style.opacity = 1;
-        menu.style.zIndex = 2;
-        menuNavigation.style.transform = "translateX(0)"
+        menuHandler("-90deg", 1, 2, 0)
+    })
+
+    menuCloseBtn.addEventListener("click", ()=> {
+        setTimeout(()=> {
+            menu.style.opacity = 0;
+            menu.style.zIndex = -1;
+        }, 500)
+        menuHandler(0, 1, 2, "100%")
     })
 
 </script>

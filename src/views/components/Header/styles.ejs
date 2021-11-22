@@ -100,10 +100,22 @@ header > nav > a > i:hover {
     text-decoration: none;
 }
 
-.menu > nav > img {
-    width: 16px;
-    margin: 7px 21px;
+.menu > nav > figure {
+    width: 28px;
+    height: 28px;
     cursor: pointer;
+    display: flex;
+    align-items: center;
+    margin: 5px 0 5px 15px;
+    justify-content: center;
+}
+
+.menu > nav > figure > img {
+    width: 16px;
+}
+
+.menu > nav > figure:hover > img {
+    transform: scale(1.1);
 }
 
 @media screen and (max-width: 782px) {
