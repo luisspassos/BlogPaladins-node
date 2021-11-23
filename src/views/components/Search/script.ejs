@@ -3,14 +3,27 @@
     const mainHeader = document.querySelector("#mainHeader");
     const headerWithSearch = document.querySelector("#headerWithSearch");
     const searchInput = document.querySelector(".search > input");
-
-    console.log(searchInput)
+    const closeSearchBtn = document.querySelector(".search > img");
 
     openSearchBtns.forEach(btn => {
         btn.addEventListener("click", ()=> {
-            searchInput.focus();
+            menuNavigation.style.transform = `translateX(100%)`
+            hamburgerMenu.style.transform = `rotate(0)`
+            setTimeout(()=> {
+                menu.style.zIndex = -1;
+                menu.style.opacity = 0;
+            }, 500)
             mainHeader.style.display = "none";
             headerWithSearch.style.display = "flex"
+            searchInput.focus();
         })
     })
+
+    closeSearchBtn.addEventListener("click", ()=> {
+        mainHeader.style.display = "flex";
+        headerWithSearch.style.display = "none";
+        searchInput.value = "";
+    })
+
+
 </script>
