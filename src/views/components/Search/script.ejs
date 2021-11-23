@@ -4,6 +4,8 @@
     const headerWithSearch = document.querySelector("#headerWithSearch");
     const searchInput = document.querySelector(".search > input");
     const closeSearchBtn = document.querySelector(".search > img");
+    const searchListWrapper = document.querySelector(".search > ul")
+    const searchList = document.querySelectorAll(".search > ul > li");
 
     openSearchBtns.forEach(btn => {
         btn.addEventListener("click", ()=> {
@@ -25,5 +27,10 @@
         searchInput.value = "";
     })
 
+    searchInput.addEventListener("focus", ()=> {
+        if(searchList.length === 0) {
+            searchListWrapper.style.display = "none"
+        }
+    })
 
 </script>
