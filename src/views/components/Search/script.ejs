@@ -1,83 +1,16 @@
 <script>
+    const openSearchBtns = document.querySelectorAll(".openSearchBtn");
+    const mainHeader = document.querySelector("#mainHeader");
+    const headerWithSearch = document.querySelector("#headerWithSearch");
+    const searchInput = document.querySelector(".search > input");
 
-    const header = document.querySelector("header");
-    const [mainNav, hamburgerNav] = document.querySelectorAll("header > nav");
-    const search = document.querySelector(".search");
-    const inputSearch = document.querySelector(".search > input");
-    const openSearchBtn = document.querySelectorAll(".openSearchBtn");
-    const closeSearchBtn = document.querySelector(".search > img");
+    console.log(searchInput)
 
-    function handlerMainNav(handler) {
-        mainNav.style.display = handler
-    }
-
-    function handlerHamburgerNav(handler) {
-        hamburgerNav.style.display = handler
-    }
-
-    window.addEventListener("resize", () => {
-
-        if (search.style.display == "block") {
-            if (window.innerWidth <= 460) {
-                header.style.flexDirection = "column"
-            } else {
-                header.style.flexDirection = "row"
-            }
-        }
-
-        if (search.style.display == "none") {
-            if (window.innerWidth <= 768) {
-                handlerHamburgerNav("block")
-                handlerMainNav("none")
-            } else {
-                handlerHamburgerNav("none")
-                handlerMainNav("block")
-            }
-
-            if (window.innerWidth <= 460) {
-                header.style.flexDirection = "column-reverse";
-            } else {
-                header.style.flexDirection = "row";
-            }
-        }
-    })
-
-    openSearchBtn.forEach((btn, i) => {
-        btn.addEventListener("click", () => {
-            menuNavigation.style.transform = `translateX(100%)`
-            hamburgerMenu.style.transform = `rotate(0)`
-            setTimeout(() => {
-                menu.style.zIndex = -1;
-                menu.style.opacity = 0;
-            }, 500)
-            search.style.display = "block"
-            inputSearch.focus()
-            handlerHamburgerNav("none")
-            handlerMainNav("none")
-
-            if (window.innerWidth <= 460) {
-                header.style.flexDirection = "column";
-            } else {
-                header.style.flexDirection = "row";
-            }
+    openSearchBtns.forEach(btn => {
+        btn.addEventListener("click", ()=> {
+            searchInput.focus();
+            mainHeader.style.display = "none";
+            headerWithSearch.style.display = "flex"
         })
     })
-
-    closeSearchBtn.addEventListener("click", () => {
-        search.style.display = "none"
-        inputSearch.value = "";
-
-        if (window.innerWidth <= 782) {
-            handlerHamburgerNav("block")
-        } else {
-            handlerMainNav("block")
-        }
-
-        if (window.innerWidth <= 460) {
-            header.style.flexDirection = "column-reverse";
-        } else {
-            header.style.flexDirection = "row";
-        }
-    })
-
 </script>

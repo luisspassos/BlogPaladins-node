@@ -1,31 +1,41 @@
 <%- include("styles.ejs") %>
-<header>
-    <div>
-        <a href="/">
-        <img class="img-header" src="../../paladins icon.png" alt="Logo">
-            <p>PALADINS <strong>BLOG</strong></p>
-        </a>
-    </div>
-    <nav>
-        <a href="/">INÍCIO</a>
-        <a href="https://www.instagram.com/" target="_blank" rel="external" >INSTAGRAM</a>
-        <a href="https://www.paladins.com/" target="_blank" rel="external" >PALADINS</a>
-        <i title="Busca" class="fas fa-search fa-lg openSearchBtn"></i>
-    </nav>
-    <nav title="Menu" class="hamburgerMenu">
-        <i class="fas fa-bars"></i>
-    </nav>
-    <aside class="menu">
+<section class="headersWrapper">
+    <header id="mainHeader">
+        <div>
+            <a href="/">
+            <img class="img-header" src="../../paladins icon.png" alt="Logo">
+                <p>PALADINS <strong>BLOG</strong></p>
+            </a>
+        </div>
         <nav>
-            <figure title="Fechar" >
-                <img src="../../../close.svg" alt="Botão de fechar">        
-            </figure>
-            <p><a href="/">INÍCIO</a></p>
-            <p><a href="https://instagram.com/" target="_blank">INSTAGRAM</a></p>
-            <p><a href="https://www.paladins.com/" target="_blank">PALADINS</a></p>
-            <p class="openSearchBtn">PESQUISAR</p>
+            <a href="/">INÍCIO</a>
+            <a href="https://www.instagram.com/" target="_blank" rel="external" >INSTAGRAM</a>
+            <a href="https://www.paladins.com/" target="_blank" rel="external" >PALADINS</a>
+            <i title="Busca" class="fas fa-search fa-lg openSearchBtn"></i>
         </nav>
-    </aside>
-    <%- include("../Search/index.ejs") %>
+        <nav title="Menu" class="hamburgerMenu">
+            <i class="fas fa-bars"></i>
+        </nav>
+        <aside class="menu">
+            <nav>
+                <figure title="Fechar" >
+                    <img src="../../../close.svg" alt="Botão de fechar">
+                </figure>
+                <p><a href="/">INÍCIO</a></p>
+                <p><a href="https://instagram.com/" target="_blank">INSTAGRAM</a></p>
+                <p><a href="https://www.paladins.com/" target="_blank">PALADINS</a></p>
+                <p class="openSearchBtn">PESQUISAR</p>
+            </nav>
+        </aside>
+    </header>
+    <header id="headerWithSearch">
+        <div>
+            <a href="/">
+            <img class="img-header" src="../../paladins icon.png" alt="Logo">
+                <p>PALADINS <strong>BLOG</strong></p>
+            </a>
+        </div>
+        <%- include("../Search/index.ejs") %>
+    </header>
     <%- include("./script.ejs") %>
-</header>
+</section>
