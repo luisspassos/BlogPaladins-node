@@ -1,1 +1,34 @@
-script
+<script>
+
+    const navs = document.querySelectorAll("header > nav");
+    const search = document.querySelector(".search");
+    const inputSearch = document.querySelector(".search > input");
+    const openSearchBtn = document.querySelectorAll(".openSearchBtn");
+    const closeSearchBtn = document.querySelector(".search > img");
+
+    window.addEventListener("resize", ()=> {
+        if(search.style.display == "none") {
+            if(window.innerWidth <= 782) {
+                navs[0].style.display = "none"
+            } else {
+                navs[0].style.display = "block"
+            }
+        }
+        
+    })
+
+    openSearchBtn.forEach((btn, i) => {
+        btn.addEventListener("click", () => {
+            search.style.display = "block"
+            inputSearch.focus()
+            navs[0].style.display = "none"
+        })
+    })
+
+    closeSearchBtn.addEventListener("click", () => {
+        search.style.display = "none";
+        inputSearch.value = "";
+        navs[0].style.display = "block"
+    })
+
+</script>

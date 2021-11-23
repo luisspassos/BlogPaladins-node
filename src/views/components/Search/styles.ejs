@@ -1,13 +1,15 @@
 <style>
+
 .search {
     display: none;
+    position: relative;
 }
 
 .search > img {
     width: 16px;
     cursor: pointer;
     display: block;
-    margin-left: auto;
+    margin: 0 0 3px auto;
 }
 
 .search > img:hover {
@@ -15,8 +17,8 @@
 }
 
 .search > input {
-    width: 325.02px;
-    font-size: 1.4em;
+    width: 330px;
+    font-size: 1.2em;
     border: 0;
     outline: 0;
 }
@@ -59,13 +61,16 @@
 .search > ul {
     display: none;
     flex-direction: column;
-    gap: 13px;
+    gap: 16px;
     background: var(--GRAY-TERTIARY);
     color: white;
+    font-size: 1.1em;
     border-radius: 0 0 10px 10px;
     padding: 13px;
     box-shadow: var(--SHADOW-PRIMARY);
     list-style-type: none;
+    position: absolute;
+    z-index: 3;
 }
 
 .search > input:focus ~ ul {
