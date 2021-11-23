@@ -1,34 +1,50 @@
 <script>
 
-    const navs = document.querySelectorAll("header > nav");
+    const [mainNav, hamburgerNav] = document.querySelectorAll("header > nav");
     const search = document.querySelector(".search");
     const inputSearch = document.querySelector(".search > input");
     const openSearchBtn = document.querySelectorAll(".openSearchBtn");
     const closeSearchBtn = document.querySelector(".search > img");
 
-    window.addEventListener("resize", ()=> {
+    function handlerMainNav(handler) {
+        mainNav.style.display = handler
+    }
+
+    function handlerHamburgerNav(handler) {
+        hamburgerNav.style.display = handler
+    }
+
+    window.addEventListener("resize", () => {
         if(search.style.display == "none") {
-            if(window.innerWidth <= 782) {
-                navs[0].style.display = "none"
+            if(window.innerWidth <= 768) {
+                handlerHamburgerNav("block")
+                handlerMainNav("none")
             } else {
-                navs[0].style.display = "block"
+                handlerHamburgerNav("none")
+                handlerMainNav("block")
             }
         }
-        
     })
 
     openSearchBtn.forEach((btn, i) => {
         btn.addEventListener("click", () => {
             search.style.display = "block"
             inputSearch.focus()
-            navs[0].style.display = "none"
+            handlerHamburgerNav("none")
+            handlerMainNav("none")
         })
     })
 
     closeSearchBtn.addEventListener("click", () => {
         search.style.display = "none";
         inputSearch.value = "";
-        navs[0].style.display = "block"
+
+        if(window.innerWidth <= 782) {
+            handlerHamburgerNav("block")
+        } else {
+            handlerMainNav("block")
+        }
+        
     })
 
 </script>
