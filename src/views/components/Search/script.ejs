@@ -1,5 +1,6 @@
 <script>
 
+    const header = document.querySelector("header");
     const [mainNav, hamburgerNav] = document.querySelectorAll("header > nav");
     const search = document.querySelector(".search");
     const inputSearch = document.querySelector(".search > input");
@@ -15,36 +16,68 @@
     }
 
     window.addEventListener("resize", () => {
-        if(search.style.display == "none") {
-            if(window.innerWidth <= 768) {
+
+        if (search.style.display == "block") {
+            if (window.innerWidth <= 460) {
+                header.style.flexDirection = "column"
+            } else {
+                header.style.flexDirection = "row"
+            }
+        }
+
+        if (search.style.display == "none") {
+            if (window.innerWidth <= 768) {
                 handlerHamburgerNav("block")
                 handlerMainNav("none")
             } else {
                 handlerHamburgerNav("none")
                 handlerMainNav("block")
             }
+
+            if (window.innerWidth <= 460) {
+                header.style.flexDirection = "column-reverse";
+            } else {
+                header.style.flexDirection = "row";
+            }
         }
     })
 
     openSearchBtn.forEach((btn, i) => {
         btn.addEventListener("click", () => {
+            menuNavigation.style.transform = `translateX(100%)`
+            hamburgerMenu.style.transform = `rotate(0)`
+            setTimeout(() => {
+                menu.style.zIndex = -1;
+                menu.style.opacity = 0;
+            }, 500)
             search.style.display = "block"
             inputSearch.focus()
             handlerHamburgerNav("none")
             handlerMainNav("none")
+
+            if (window.innerWidth <= 460) {
+                header.style.flexDirection = "column";
+            } else {
+                header.style.flexDirection = "row";
+            }
         })
     })
 
     closeSearchBtn.addEventListener("click", () => {
-        search.style.display = "none";
+        search.style.display = "none"
         inputSearch.value = "";
 
-        if(window.innerWidth <= 782) {
+        if (window.innerWidth <= 782) {
             handlerHamburgerNav("block")
         } else {
             handlerMainNav("block")
         }
-        
+
+        if (window.innerWidth <= 460) {
+            header.style.flexDirection = "column-reverse";
+        } else {
+            header.style.flexDirection = "row";
+        }
     })
 
 </script>
