@@ -15,12 +15,4 @@ firebase.initializeApp(firebaseConfig);
 
 const db = firebase.firestore();
 
-const posts = [];
-
-db.collection("posts").onSnapshot(snapshot => {
-    snapshot.forEach(print => {
-        posts.push(print.data())
-    })
-})
-
-exports.posts = posts;
+exports.db = db;

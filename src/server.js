@@ -1,7 +1,7 @@
 const express = require("express");
 const app = express();
 
-const { posts } = require("./firebase.js");
+const { db } = require("./firebase.js");
 
 app.set("view engine", "ejs")
 app.set('views','./src/views');
@@ -13,7 +13,7 @@ app.get("/", (req, res)=> {
 })
 
 app.get("/post", (req, res)=> {
-    res.render("pages/post", { posts })
+    res.render("pages/post", { db })
 })
 
 app.listen(8080);
