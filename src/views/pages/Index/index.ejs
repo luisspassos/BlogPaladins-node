@@ -34,18 +34,17 @@
             <h1>Confira os principais posts desta semana!</h1>
         </section>
         <ul class="postList">
-            db.collection("posts").onSnapshot(snapshot => {
-                snapshot.forEach(post => {
-                    <li>
-                        <article class="postInfo">
-                            <h3>O baú de Halloween está de volta!</h3>
-                            <p><strong>LEITURA</strong> 4 MIN <i class="far fa-clock"></i></p>
-                            <p>Por Luís Passos</p>
-                        </article>
-                        <figure></figure>
-                    </li>
-                })
-           })
+            <% posts.forEach(post => { %>
+                <li>
+                    <article class="postInfo">
+                        <h3><%= post.title %></h3>
+                        <p><strong>LEITURA</strong> <%= post.readTime %> MIN <i class="far fa-clock"></i></p>
+                        <p>Por <%= post.author %></p>
+                    </article>
+                    <figure style="background: url(<%= post.img %>) 75% 10%;"></figure>
+                </li>
+           <% }) %>
+           <!-- Switch to img because of this stupid error message -->
         </ul>
     </main>
 
