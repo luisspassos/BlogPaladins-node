@@ -61,10 +61,9 @@
 .search > ul {
     display: none;
     flex-direction: column;
-    gap: 16px;
+    gap: 10px;
     background: var(--GRAY-TERTIARY);
     color: white;
-    font-size: 1.1em;
     border-radius: 0 0 10px 10px;
     padding: 13px;
     box-shadow: var(--SHADOW-PRIMARY);
@@ -79,7 +78,14 @@
 
 .search > ul > li {
     font-weight: normal;
+    font-size: 1.1em;
+    line-height: 1.5em;
 }
+
+.search > ul > li > time {
+    font-size: 0.9em;
+    display: block;
+}   
 
 @media (max-width: 719px) {
     .search {
