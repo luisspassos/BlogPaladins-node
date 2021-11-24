@@ -12,11 +12,6 @@
 </head>
 <body>
     <%- include('../../components/Header/index.ejs') %>
-    <% db.collection("posts").onSnapshot(snapshot => {
-        snapshot.forEach(post => {
-            console.log(post.data())
-        })
-    }) %>
     <Main>
         <section class="noticia">
             <figure>

@@ -11,7 +11,6 @@
 </head>
 <body>
     <%- include('../../components/Header/index.ejs') %>
-
     <main>
         <section class="emphasis">
             <section class="slider">
@@ -35,46 +34,18 @@
             <h1>Confira os principais posts desta semana!</h1>
         </section>
         <ul class="postList">
-            <li>
-                <section class="postInfo">
-                    <h3>O baú de Halloween está de volta!</h3>
-                    <p><strong>LEITURA</strong> 4 MIN <i class="far fa-clock"></i></p>
-                    <p>Por Luís Passos</p>
-                </section>
-                <figure>
-                    
-                </figure>
-            </li>
-            <li>
-                <section class="postInfo">
-                    <h3>Chegou o novo passe de batalha Battle Byte!</h3>
-                    <p><strong>LEITURA</strong> 4 MIN <i class="far fa-clock"></i></p>
-                    <p>Por Luís Passos</p>
-                </section>
-                <figure>
-                    
-                </figure>
-            </li>
-            <li>
-                <section class="postInfo">
-                    <h3>O baú de Halloween está de volta!</h3>
-                    <p><strong>LEITURA</strong> 4 MIN <i class="far fa-clock"></i></p>
-                    <p>Por Luís Passos</p>
-                </section>
-                <figure>
-                    
-                </figure>
-            </li>
-            <li>
-                <section class="postInfo">
-                    <h3>Conheça a nova skin do Jenos no passe de batalha!</h3>
-                    <p><strong>LEITURA</strong> 4 MIN <i class="far fa-clock"></i></p>
-                    <p>Por Luís Passos</p>
-                </section>
-                <figure>
-                    
-                </figure>
-            </li>
+            db.collection("posts").onSnapshot(snapshot => {
+                snapshot.forEach(post => {
+                    <li>
+                        <article class="postInfo">
+                            <h3>O baú de Halloween está de volta!</h3>
+                            <p><strong>LEITURA</strong> 4 MIN <i class="far fa-clock"></i></p>
+                            <p>Por Luís Passos</p>
+                        </article>
+                        <figure></figure>
+                    </li>
+                })
+           })
         </ul>
     </main>
 

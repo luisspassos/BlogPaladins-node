@@ -9,7 +9,7 @@ app.set('views','./src/views');
 app.use(express.static("./src/assets"));
 
 app.get("/", (req, res)=> {
-    res.render("pages/index");
+    res.render("pages/index", { db });
 })
 
 app.get("/post", (req, res)=> {
