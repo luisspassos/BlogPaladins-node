@@ -1,8 +1,6 @@
 const express = require("express");
 const app = express();
 
-const posts = [];
-
 app.set("view engine", "ejs")
 app.set('views','./src/views');
 
@@ -17,7 +15,5 @@ app.get("/post", (req, res)=> {
 })
 
 app.listen(8080);
-console.log(posts)
 console.log("Running 🚀")
 
-module.exports = posts;

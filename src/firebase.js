@@ -1,8 +1,6 @@
 const firebase = require("firebase");
 require("firebase/firestore");
 
-const posts = require("./server");
-
 const firebaseConfig = {
     apiKey: "AIzaSyDVUMDpdj2-LvwBl-BOnR09AkkNLkA3F6I",
     authDomain: "paladins-blog.firebaseapp.com",
@@ -19,12 +17,6 @@ const db = firebase.firestore();
 
 db.collection("posts").onSnapshot(snapshot => {
     snapshot.forEach(print => {
-        posts.push(print.data())
-        console.log(posts)
+        console.log(print.data())
     })
 })
-
-
-
-
-
