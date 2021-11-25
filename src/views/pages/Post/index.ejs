@@ -13,7 +13,8 @@
 <body>
     <%- include('../../components/Header/index.ejs') %>
     <Main>
-        <% console.log(post.timestamp) %>
+        <% console.log( post.timestamp.seconds) %>
+        <% console.log((new Date().getTime() - post.timestamp.seconds * 1000) / 1000) %>
         <section class="noticia">
             <figure>
                 <img src="<%= post.img.url %>" alt="<%= post.img.alt %>">
