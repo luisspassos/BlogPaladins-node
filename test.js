@@ -1,11 +1,52 @@
-const postTimestamp = 1637852580 * 1000;
-const currentTimestamp = new Date().getTime();
+function takePostTime(timestamp) {
 
-const seconds = Math.floor((currentTimestamp - postTimestamp) / 1000);
-const minutes = Math.floor(seconds / 60);
-const hours = Math.floor(minutes / 60);
-const days = Math.floor(hours / 24);
+    const date = new Date();
 
-const daysOfTheMonth = (y, m) => new Date(y, m, 0).getDate();
+    const postTimestamp = timestamp * 1000;
+    const currentTimestamp = date.getTime();
 
-const months = Math.floor(days)
+    const seconds = Math.floor((currentTimestamp - postTimestamp) / 1000);
+    const minutes = Math.floor(seconds / 60);
+    const hours = Math.floor(minutes / 60);
+    const days = Math.floor(hours / 24);
+
+    const daysOfTheMonth = (y, m) => new Date(y, m, 0).getDate();
+    const daysOfTheYear = 337 + daysOfTheMonth(date.getFullYear(), 2);
+    const averageOfTheDaysOfTheYear = (daysOfTheYear) / 12
+    
+    const months = Math.floor(days / averageOfTheDaysOfTheYear)
+    const years = Math.floor(months / 12)
+
+    let indicator = "segundo";
+    let time = seconds;
+
+    if(years !== 0) {
+        indicator = "ano"
+        time = years
+    } else if(months !== 0) {
+        indicator = "mês"
+        time = months
+    } else if(days !== 0) {
+        indicator = "dia"
+        time = days;
+    } else if(hours !== 0) {
+        indicator = "hora"
+        time = hours
+    } else {
+        indicator = "minuto"
+        time = minutes
+    }
+
+    if(time > 0) {
+        if(indicator === "mês") {
+            indicator = "meses"
+        } else {
+            indicator += "s"
+        }
+    }
+
+    return `Há ${time} ${indicator}`
+
+}
+
+console.log(takePostTime(1637852580))
