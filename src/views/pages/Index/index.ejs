@@ -15,18 +15,14 @@
         <section class="emphasis">
             <section class="slider">
                 <ul class="imgsSlider">
-                    <li>
-                        <img src="https://pbs.twimg.com/media/EHPxN2gW4AANtDS.jpg" alt="placeholder2">
-                        <h2>O baú de Halloween está de volta na loja!</h2>
-                    </li>
-                    <li>
-                        <img src="https://i.pinimg.com/originals/ad/7f/51/ad7f511599c7c3bde1e19cc38f240fed.jpg" alt="placeholder1">
-                        <h2>Conheça a nova skin do Jenos no passe de batalha!</h2>
-                    </li>
-                    <li>
-                        <img src="https://i.pinimg.com/736x/33/61/2b/33612b8beb7cd9b1fa72e35655968e2a.jpg" alt="placeholder3">
-                        <h2>Chegou o novo passe de batalha Battle Byte!</h2>
-                    </li>
+                    <% posts.forEach(post => { %>
+                       <% if(post.isHighlighted) { %>
+                        <li>
+                            <img src="<%= post.img.url %>" alt="<%= post.img.alt %>">
+                            <h2><%= post.title %></h2>
+                        </li>
+                       <% } %> 
+                    <% }) %>  
                 </ul>
                 <button><i class="fas fa-angle-left"></i></button>
                 <button><i class="fas fa-angle-right"></i></button>
@@ -41,10 +37,10 @@
                         <p><strong>LEITURA</strong> <%= post.readTime %> MIN <i class="far fa-clock"></i></p>
                         <p>Por <%= post.author %></p>
                     </article>
-                    <figure style="background: url(<%= post.img %>) 75% 10%;"></figure>
+                    <figure style="background: url(<%= post.img.url %>) <%= post.img.x %> <%= post.img.y %>;"></figure>
+                    <!-- Harmless error -->
                 </li>
            <% }) %>
-           <!-- Switch to img because of this stupid error message -->
         </ul>
     </main>
 

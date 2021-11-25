@@ -8,7 +8,7 @@ app.set('views','./src/views');
 
 app.use(express.static("./src/assets"));
 
-db.collection("posts").onSnapshot(snapshot => {
+db.collection("posts").orderBy("timestamp", "desc").onSnapshot(snapshot => {
 
     const posts = [];
 
@@ -21,8 +21,6 @@ db.collection("posts").onSnapshot(snapshot => {
     })
     
 })
-
-
 
 app.get("/post", (req, res)=> {
     res.render("pages/post")
