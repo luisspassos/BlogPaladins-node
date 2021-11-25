@@ -3,7 +3,6 @@
     const [sliderPrev, sliderNext] = document.querySelectorAll(".slider button");
     const sliderImgs = document.querySelectorAll(".imgsSlider > li > img");
     const slider = document.querySelector(".imgsSlider");
-    const sliderPosts = document.querySelectorAll(".imgsSlider > li");
 
     //slider
 
@@ -35,12 +34,6 @@
 
     sliderNext.addEventListener("click", carouselNext)
     sliderPrev.addEventListener("click", carouselPrev)
-
-    sliderPosts.forEach(post => {
-        post.addEventListener("click", ()=> {
-           location = "/post"
-        })
-    })
 
     // Posts
 

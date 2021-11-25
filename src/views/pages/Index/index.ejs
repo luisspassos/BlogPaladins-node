@@ -17,7 +17,7 @@
                 <ul class="imgsSlider">
                     <% posts.forEach(post => { %>
                        <% if(post.isHighlighted) { %>
-                        <li>
+                        <li onclick="goToPost('<%= post.ref %>')">
                             <img src="<%= post.img.url %>" alt="<%= post.img.alt %>">
                             <h2><%= post.title %></h2>
                         </li>

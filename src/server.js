@@ -28,7 +28,7 @@ app.get("/", (req, res) => {
 firebaseRef().then(snapshot => {
     snapshot.forEach(post => {
         app.get(`/${post.data().ref}`, (req, res) => {
-            res.render("pages/post")
+            res.render("pages/post", {post: post.data()})
         })
     })
 })
