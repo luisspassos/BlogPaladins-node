@@ -1,8 +1,0 @@
-const obj = {
-    name: "Luis",
-    age: 15
-}
-
-obj.school = "Prisma"
-
-console.log(obj)
