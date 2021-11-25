@@ -1,4 +1,0 @@
-const postTimestamp = 1637852580 * 1000;
-const currentTimestamp = new Date().getTime();
-
-console.log((postTimestamp - currentTimestamp) / 1000)
