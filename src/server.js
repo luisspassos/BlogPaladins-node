@@ -4,25 +4,26 @@ const app = express();
 const { db } = require("./firebase.js");
 
 app.set("view engine", "ejs")
-app.set('views','./src/views');
+app.set('views', './src/views');
 
 app.use(express.static("./src/assets"));
 
-db.collection("posts").orderBy("timestamp", "desc").onSnapshot(snapshot => {
+app.get("/", (req, res) => {
 
-    const posts = [];
+    db.collection("posts").orderBy("timestamp", "desc").get().then(snapshot => {
 
-    snapshot.forEach(post => {
-        posts.push(post.data())
+        const posts = [];
+
+        snapshot.forEach(post => {
+            posts.push(post.data())
+        })
+
+        res.render("pages/index", { posts });
     })
 
-    app.get("/", (req, res)=> {
-        res.render("pages/index", {posts});
-    })
-    
 })
 
-app.get("/post", (req, res)=> {
+app.get("/post", (req, res) => {
     res.render("pages/post")
 })
 
