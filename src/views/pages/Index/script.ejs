@@ -1,14 +1,15 @@
 <script>
     
-    const sliderBtns = document.querySelectorAll(".slider button");
+    const [sliderPrev, sliderNext] = document.querySelectorAll(".slider button");
     const sliderImgs = document.querySelectorAll(".imgsSlider > li > img");
     const slider = document.querySelector(".imgsSlider");
     const sliderPosts = document.querySelectorAll(".imgsSlider > li");
-    const posts = document.querySelectorAll(".postList > li");
 
     //slider
 
     let sliderIndex = 0;
+
+    const sliderTranslateX = ()=> `translateX(${-sliderIndex * 100}%)`;
 
     function carouselNext() {
         sliderIndex++;
@@ -17,23 +18,23 @@
             sliderIndex = 0;
         }
 
-        slider.style.transform = `translateX(${-sliderIndex * 100}%)`
+        slider.style.transform = sliderTranslateX()
     }
 
     function carouselPrev() {
         sliderIndex--;
         
         if(sliderIndex < 0) {
-            sliderIndex = 2;
-            slider.style.transform = `translateX(-200%)`
+            sliderIndex = sliderImgs.length - 1;
+            slider.style.transform = sliderTranslateX()
             return
         }
 
-        slider.style.transform = `translateX(${-sliderIndex * 100}%)`
+        slider.style.transform = sliderTranslateX()
     }
 
-    sliderBtns[1].addEventListener("click", carouselNext)
-    sliderBtns[0].addEventListener("click", carouselPrev)
+    sliderNext.addEventListener("click", carouselNext)
+    sliderPrev.addEventListener("click", carouselPrev)
 
     sliderPosts.forEach(post => {
         post.addEventListener("click", ()=> {
