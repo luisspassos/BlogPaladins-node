@@ -32,6 +32,8 @@ firebaseRef().then(snapshot => {
           
         app.get(`/${post.data().ref}`, (req, res) => {
 
+            firebaseRef().then
+
             const postObj = post.data()
             postObj.postTime = takePostTime(postObj.timestamp.seconds)
 

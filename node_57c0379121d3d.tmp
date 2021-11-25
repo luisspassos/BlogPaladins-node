@@ -1,6 +1,0 @@
-const obj = {
-    name: "Luis",
-    age: 15
-}
-
-console.log(obj)
