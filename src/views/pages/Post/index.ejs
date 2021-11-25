@@ -13,8 +13,6 @@
 <body>
     <%- include('../../components/Header/index.ejs') %>
     <Main>
-        <% console.log( post.timestamp.seconds) %>
-        <% console.log((new Date().getTime() - post.timestamp.seconds * 1000) / 1000) %>
         <section class="noticia">
             <figure>
                 <img src="<%= post.img.url %>" alt="<%= post.img.alt %>">
@@ -24,7 +22,7 @@
                     <p class="titulo-main-destaque"><i class="fas fa-star"></i> DESTAQUE</p>
                 <% } %>
                 <p class="titulo-main"><%= post.title %></p>
-                <p class="autor-main"><span>por <strong><%= post.author %> </strong> há 2 meses </span><time><i class="far fa-clock"></i> <span class="main-tempo-leitura"><%= post.readTime %> MIN DE LEITURA</span></time></p>
+                <p class="autor-main"><span>por <strong><%= post.author %> </strong> há <%= post.postTime %> </span><time><i class="far fa-clock"></i> <span class="main-tempo-leitura"><%= post.readTime %> MIN DE LEITURA</span></time></p>
             </div>
         </section>
         <section class="conteudo">

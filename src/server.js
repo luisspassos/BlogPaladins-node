@@ -1,6 +1,8 @@
 const express = require("express");
 const app = express();
 
+const takePostTime = require("./takePostTime.js");
+
 const { db } = require("./firebase.js");
 
 const firebaseRef = ()=> db.collection("posts").orderBy("timestamp", "desc").get();
@@ -27,8 +29,13 @@ app.get("/", (req, res) => {
 
 firebaseRef().then(snapshot => {
     snapshot.forEach(post => {
+          
         app.get(`/${post.data().ref}`, (req, res) => {
-            res.render("pages/post", {post: post.data()})
+
+            const postObj = post.data()
+            postObj.postTime = takePostTime(postObj.timestamp.seconds)
+
+            res.render("pages/post", {post: postObj})
         })
     })
 })
