@@ -31,7 +31,7 @@
         </section>
         <ul class="postList">
             <% posts.forEach(post => { %>
-                <li>
+                <li onclick="goToPost('<%= post.ref %>')">
                     <article class="postInfo">
                         <h3><%= post.title %></h3>
                         <p><strong>LEITURA</strong> <%= post.readTime %> MIN <i class="far fa-clock"></i></p>

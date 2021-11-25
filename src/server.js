@@ -23,8 +23,12 @@ app.get("/", (req, res) => {
 
 })
 
-app.get("/post", (req, res) => {
-    res.render("pages/post")
+db.collection("posts").orderBy("timestamp", "desc").get().then(snapshot => {
+    snapshot.forEach(post => {
+        app.get(`/${post.data().ref}`, (req, res) => {
+            res.render("pages/post")
+        })
+    })
 })
 
 app.listen(8080);

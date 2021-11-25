@@ -43,10 +43,8 @@
 
     // Posts
 
-    posts.forEach(post => {
-        post.addEventListener("click", ()=> {
-            location = "/post"
-        })
-    })
+    function goToPost(ref) {
+        location = `/${ref}`
+    }
     
 </script>
