@@ -5,7 +5,7 @@ const takePostTime = require("./takePostTime.js");
 
 const { db } = require("./firebase.js");
 
-const firebaseRef = ()=> db.collection("posts").orderBy("timestamp", "desc").get();
+const firebaseRef = () => db.collection("posts").orderBy("timestamp", "desc").get();
 
 app.set("view engine", "ejs")
 app.set('views', './src/views');
@@ -27,19 +27,23 @@ app.get("/", (req, res) => {
 
 })
 
-firebaseRef().then(snapshot => {
-    snapshot.forEach(post => {
-          
-        app.get(`/${post.data().ref}`, (req, res) => {
 
-            firebaseRef().then
+app.get("/post", (req, res) => {
 
-            const postObj = post.data()
-            postObj.postTime = takePostTime(postObj.timestamp.seconds)
+    const ref = req.url.split("?")[1];
+    
 
-            res.render("pages/post", {post: postObj})
+    firebaseRef().then(posts => {
+        const postsArr = [];
+        posts.forEach(post => {
+            postsArr.push(post.data())
         })
+        
+        const postObj = postsArr.find(post => post.ref.includes(ref))
+        postObj.postTime = takePostTime(postObj.timestamp.seconds)
+        res.render("pages/post", { post: postObj }) 
     })
+
 })
 
 app.listen(8080);
