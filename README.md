@@ -16,6 +16,8 @@
 - <a href="https://developer.mozilla.org/pt-BR/docs/Web/HTML">HTML</a>
 - <a href="https://developer.mozilla.org/pt-BR/docs/Web/CSS">CSS</a>
 - <a href="https://developer.mozilla.org/pt-BR/docs/Web/JavaScript">JS</a>
+- <a href="https://nodejs.org/en/">Node JS</a>
+- <a href="https://firebase.google.com/?hl=pt">Firebase</a>
 
 ## License :white_check_mark:
 
