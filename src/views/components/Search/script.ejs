@@ -27,13 +27,17 @@
         searchInput.value = "";
     })
 
+    function ola(posts) {
+        console.log(JSON.parse(posts));
+    }
+
 /*     searchInput.addEventListener("focus", () => {
         if (searchList.length === 0) {
             searchListWrapper.style.display = "none"
         }
     }) */
 
-    searchInput.addEventListener("keyup", () => {
+   /*  searchInput.addEventListener("keyup", () => {
         const value = searchInput.value;
         const filteredPosts = posts.filter(post => post.title.toLowerCase().includes(value.toLowerCase()))
         searchListWrapper.innerHTML = filteredPosts.map(post => {
@@ -42,5 +46,5 @@
             )
         }).join("")
     })
-
+ */
 </script>
