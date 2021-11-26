@@ -1,8 +1,8 @@
 <p align="center">
-  <img src="./imagens/paladins icon.png" alt="PaladinsBlogLogo" width="200" height="200" />
+  <img src="./src/assets/paladins_icon.png" alt="PaladinsBlogLogo" width="200" height="200" />
 </p>
 
-<p align="center">:page_facing_up: A simple blog about Paladins 💎</p>
+<p align="center">:page_facing_up: A simple blog about Paladins and Node JS 💎</p>
 <h1 align="center">Paladins Blog</h1>
 
 ## Project Status :construction:
@@ -10,7 +10,9 @@
 
 ## Demonstration
 
-- <a href="https://luisspassos.github.io/BlogPaladins/">https://luisspassos.github.io/BlogPaladins/</a>
+<img src="./src/assets/img_site_1.png" alt="Página de início"  />
+<img src="./src/assets/img_site_2.png" alt="Página de post" />
+<img src="./src/assets/img_site_3.png" alt="Página de ínicio" />
 
 ## Technologies used :scroll:
 - <a href="https://developer.mozilla.org/pt-BR/docs/Web/HTML">HTML</a>
