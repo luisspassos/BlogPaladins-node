@@ -31,8 +31,6 @@ app.get("/", (req, res) => {
 app.get("/post", (req, res) => {
 
     const ref = req.url.split("?")[1];
-    
-
     firebaseRef().then(posts => {
         const postsArr = [];
         posts.forEach(post => {
