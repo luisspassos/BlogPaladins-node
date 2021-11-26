@@ -8,10 +8,10 @@
     const searchList = document.querySelectorAll(".search > ul > li");
 
     openSearchBtns.forEach(btn => {
-        btn.addEventListener("click", ()=> {
+        btn.addEventListener("click", () => {
             menuNavigation.style.transform = `translateX(100%)`
             hamburgerMenu.style.transform = `rotate(0)`
-            setTimeout(()=> {
+            setTimeout(() => {
                 menu.style.zIndex = -1;
                 menu.style.opacity = 0;
             }, 500)
@@ -21,16 +21,26 @@
         })
     })
 
-    closeSearchBtn.addEventListener("click", ()=> {
+    closeSearchBtn.addEventListener("click", () => {
         mainHeader.style.display = "flex";
         headerWithSearch.style.display = "none";
         searchInput.value = "";
     })
 
-    searchInput.addEventListener("focus", ()=> {
-        if(searchList.length === 0) {
+/*     searchInput.addEventListener("focus", () => {
+        if (searchList.length === 0) {
             searchListWrapper.style.display = "none"
         }
+    }) */
+
+    searchInput.addEventListener("keyup", () => {
+        const value = searchInput.value;
+        const filteredPosts = posts.filter(post => post.title.toLowerCase().includes(value.toLowerCase()))
+        searchListWrapper.innerHTML = filteredPosts.map(post => {
+            return(
+                `<li>${post.title} <time>Há ${post.postTime}</time></li>`
+            )
+        }).join("")
     })
 
 </script>
