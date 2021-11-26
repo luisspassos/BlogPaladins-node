@@ -22,11 +22,14 @@ app.get("/", (req, res) => {
             posts.push(post.data())
         })
 
+        posts.forEach(post => {
+            post.postTime = takePostTime(post.timestamp.seconds)
+        })
+
         res.render("pages/index", { posts });
     })
 
 })
-
 
 app.get("/post", (req, res) => {
 
@@ -36,13 +39,25 @@ app.get("/post", (req, res) => {
         posts.forEach(post => {
             postsArr.push(post.data())
         })
-        
+
+        postsArr.forEach(post => {
+            post.postTime = takePostTime(post.timestamp.seconds)
+        })
+
         const postObj = postsArr.find(post => post.ref.includes(ref))
-        postObj.postTime = takePostTime(postObj.timestamp.seconds)
-        res.render("pages/post", { post: postObj }) 
+        res.render("pages/post", { post: postObj, posts: postsArr })
+
     })
 
 })
+
+app.get("*", (req, res)=> {
+    res.status(404).redirect("/");
+})
+
+app.use((err, req, res, next)=> {
+    res.status(err.status).redirect("/");
+});
 
 app.listen(8080);
 console.log("Running 🚀")

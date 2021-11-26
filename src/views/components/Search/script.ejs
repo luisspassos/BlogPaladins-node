@@ -2,10 +2,22 @@
     const openSearchBtns = document.querySelectorAll(".openSearchBtn");
     const mainHeader = document.querySelector("#mainHeader");
     const headerWithSearch = document.querySelector("#headerWithSearch");
+    const search = document.querySelector(".search");
     const searchInput = document.querySelector(".search > input");
     const closeSearchBtn = document.querySelector(".search > img");
     const searchListWrapper = document.querySelector(".search > ul")
     const searchList = document.querySelectorAll(".search > ul > li");
+
+    const posts = <%- JSON.stringify(posts) %>
+
+    let value = searchInput.value.trim();
+    const filteredPosts = ()=> posts.filter(post => post.title.toLowerCase().includes(value.toLowerCase()))
+
+    window.addEventListener("click", (event)=> {
+        if(event.target !== searchListWrapper && event.target !== searchInput && event.target !== openSearchBtns[0]) {
+            searchListWrapper.style.display = "none"
+        }
+    })
 
     openSearchBtns.forEach(btn => {
         btn.addEventListener("click", () => {
@@ -27,24 +39,38 @@
         searchInput.value = "";
     })
 
-    function ola(posts) {
-        console.log(JSON.parse(posts));
-    }
-
-/*     searchInput.addEventListener("focus", () => {
-        if (searchList.length === 0) {
-            searchListWrapper.style.display = "none"
+    searchInput.addEventListener("focus", () => {
+        if(filteredPosts().length !== 0) {
+            searchListWrapper.style.display = "flex"
         }
-    }) */
+        searchListWrapper.innerHTML = filteredPosts().map((post, i) => {
+            if (i < 5) {
+                return (
+                    `<a href="post?${post.ref}"><li>${post.title}<time>Há ${post.postTime}</time></li></a>`
+                )
+            }
 
-   /*  searchInput.addEventListener("keyup", () => {
-        const value = searchInput.value;
-        const filteredPosts = posts.filter(post => post.title.toLowerCase().includes(value.toLowerCase()))
-        searchListWrapper.innerHTML = filteredPosts.map(post => {
-            return(
-                `<li>${post.title} <time>Há ${post.postTime}</time></li>`
-            )
         }).join("")
     })
- */
+
+    searchInput.addEventListener("keyup", ()=> {
+
+        value = searchInput.value.trim();
+
+        if(filteredPosts().length === 0) {
+            searchListWrapper.style.display = "none"
+        } else {
+            searchListWrapper.style.display = "flex"
+        }
+
+        searchListWrapper.innerHTML = filteredPosts().map((post,i) => {
+            if (i < 5) {
+                return (
+                    `<a href="post?${post.ref}"><li>${post.title}<time>Há ${post.postTime}</time></li></a>`
+                )
+            }
+        }).join("")
+
+    })
+
 </script>
